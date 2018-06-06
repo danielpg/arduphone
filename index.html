@@ -4,6 +4,29 @@
 <script src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript"  src="cordova.js"></script> 
 <script>
+var desktop = 0;
+
+if(desktop == 0){
+	document.addEventListener("deviceready", onDeviceReady, false);
+} else {
+	$(function(){ onDeviceReady(); });
+}
+
+$(window).on("resize orientationchange", function(){
+    ScaleContentToDevice();
+	//$.mobile.resetActivePageHeight();
+});
+
+function onDeviceReady() {
+	bluetoothSerial.list(function(data){
+		say_list(data);
+		
+		
+	}, function(){});
+	
+	$("#ok").html("javscript OK");
+}
+
 function say_list(items){
 	for(i = 0; i < items.length; i++ ){
 		$("#console").append("<div>object:</div>");
@@ -14,11 +37,6 @@ function say_list(items){
 	}
 }
 
-bluetoothSerial.list(function(data){
-	say_list(data);
-	
-	
-}, function(){});
 
 
 
@@ -28,5 +46,6 @@ bluetoothSerial.list(function(data){
 <body>
 Grua
 <div id="console"></div>
+<div id="ok"></div>
 </body>
 </html>
