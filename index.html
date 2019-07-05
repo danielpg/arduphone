@@ -58,6 +58,16 @@ function button2(){
 	});
 }
 
+function activeRead(){
+	bluetoothSerial.subscribe('\n', function (data) {
+	    
+		//console.log(data);
+	    
+	}, function(){   }
+		//error Reading
+	);
+}
+
 //bluetoothSerial.write(data, success, failure);
 //
 
@@ -72,7 +82,15 @@ function say_list(items){
 }
 
 
-
+function myclose(){
+	if (navigator.app) {
+	    navigator.app.exitApp();
+	} else if (navigator.device) {
+	    navigator.device.exitApp();
+	} else {
+	    window.close();
+	}
+}
 
 </script>
 
