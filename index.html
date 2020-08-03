@@ -31,7 +31,7 @@ function refreshlist(){
 
 function drawlist(){
 	for(i = 0; i < bluelist.length; i++ ){
-			$("#list").append("<div class='mybutton' onclick='select_blue(" + i + ")'>" + bluelist[i].name + "</div>");	
+			$("#list").append("<div class='mybutton' onclick='select_blue(" + i + ")'>d:" + bluelist[i].name + "</div>");	
 
 	}
 }
@@ -51,7 +51,7 @@ function button1(){
 }
 
 function button2(){
-	bluetoothSerial.write("b", function(){
+	bluetoothSerial.write("1", function(){
 		alert("WriteOK");
 	}, function(){ 
 		alert("writeError");
@@ -99,8 +99,16 @@ function myclose(){
 Grua
 <div id="list"></div>
 <div id="buttons">
-<div class="mybutton" onclick="button1();" style="background:#f48341">Button A</div>
-<div class="mybutton" onclick="button2();"  style="background:#f4427d">Button B</div>
+<div class="mybutton" onclick="button1();" style="background:#f48341">Write A</div>
+<div class="mybutton" onclick="button2();"  style="background:#f4427d">Write 1</div>
+
+<div class="mybutton" onclick="refreshlist();"  style="background:#f4427d">Refreshlist</div>
+
+
+<div class="mybutton" onclick="select_blue(0);"  style="background:#f4427d">Select0</div>
+<div class="mybutton" onclick="select_blue(1);"  style="background:#f4427d">Select1</div>
+
+
 </div>
 <div id="console"></div>
 <div id="ok"></div>
