@@ -1,0 +1,52 @@
+.cblue{background:#448dff !important;color:white !important;text-shadow: 1px 1px black !important;}
+.cred{background:#df3c4c !important;color:white !important;text-shadow: 1px 1px black !important;}
+button.ui-btn-inline, .ui-header button.ui-btn, .ui-footer button.ui-btn {    border-radius: 5px;}
+
+.ui-controlgroup-controls{width:100%}
+.ui-controlgroup-controls .ui-radio{width: 33% !important;text-align: center !important;}
+
+
+
+.bb .ui-btn::after{background-size: 72% !important;}
+.bb .ui-btn {    font-size: 46px;border: 0px;}
+.bb .ui-btn-icon-notext {width: 82px!important;height: 82px!important;}
+.bb .ui-btn-icon-notext::after {
+width: 66px !important;height: 66px !important;
+left: 50%;margin-left: -33px!important;
+top: 50%;margin-top: -33px!important;}
+
+.green{background:#36bb51}
+
+.center{text-align:center}
+
+.bb .ui-btn {background-color: #0f8c69;}
+.bb .ui-btn:active {opacity:0.3;}
+
+.ui-page {background: linear-gradient(0deg, rgb(14, 17, 28) 0%, rgb(33, 41, 60) 100%);}
+.ui-btn.ui-input-btn{background: #383E5C;color: white;border: 0px black;text-shadow: none;}
+.ui-btn.ui-corner-all.ui-btn-inherit.ui-radio-off{background:#383E5C; color:white;text-shadow: none;    border: 1px solid #75798e;}
+legend {    color: rgb(244,244,245); text-shadow: none; font-size: 1em;font-weight:bold;margin-top:20px}
+.ui-header.ui-bar-inherit {    background: #383e5c;    color: white; text-shadow: none;}
+.ui-bar-inherit{background:transparent !important}
+label{color:white;text-shadow:none;font-weight:bold !important}
+
+
+.bred{background:#bc2828 !important}
+.bred:active{background:orange !important}
+.purple{background:#913676 !important}
+.darkblue{background:#394cb5 !important}
+
+.ui-bar.ui-bar-a{ background: #383e5c;color: white;text-shadow: none; border: 1px solid #75798e; }
+
+.inbox {margin-right: .3125em;margin-left: .3125em;background:#383e5c;border-radius:5px;padding: .7em 1em;}
+
+
+.ui-btn.ui-btn-icon-right.ui-icon-carat-r {  background: none;color: white; text-shadow: none;}
+
+#mypanel {    background: #383e5c;}
+.ui-panel-inner div{color:white;text-shadow:none;border-bottom:1px solid #75798e;;padding-top:20px;padding-bottom:20px}
+.disp .ui-btn.ui-btn-icon-right.ui-icon-carat-r {    line-height: 60px !important; }
+ 
+	
+.full-width-slider input {    display: none;}
+.full-width-slider .ui-slider-track {    margin-left: 15px;}
