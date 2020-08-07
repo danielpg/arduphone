@@ -70,9 +70,9 @@ function drawlist(){
 function select_blue(id){
 	bluetoothSerial.isConnected(function(){}, function(){
 		bluetoothSerial.connect(bluelist[id].address, function(){ 
-			//alert("connected");		
+			 $.mobile.changePage("#pslider");		
 		}, function(){ 
-			//alert("notConnected");
+			 alert("Error: no se pudo conectar.");
 		 });
 	});
 }
