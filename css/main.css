@@ -15,6 +15,15 @@ width: 66px !important;height: 66px !important;
 left: 50%;margin-left: -33px!important;
 top: 50%;margin-top: -33px!important;}
 
+.cc .ui-btn::after{background-size: 72% !important;}
+.cc .ui-btn {    font-size: 36px;border: 0px;}
+.cc .ui-btn-icon-notext {width: 62px!important;height: 62px!important;}
+.cc .ui-btn-icon-notext::after {
+width: 46px !important;height: 46px !important;
+left: 50%;margin-left: -23px!important;
+top: 50%;margin-top: -23px!important;}
+
+
 .green{background:#36bb51}
 
 .center{text-align:center}
@@ -25,7 +34,7 @@ top: 50%;margin-top: -33px!important;}
 .ui-page {background: linear-gradient(0deg, rgb(14, 17, 28) 0%, rgb(33, 41, 60) 100%);}
 .ui-btn.ui-input-btn{background: #383E5C;color: white;border: 0px black;text-shadow: none;}
 .ui-btn.ui-corner-all.ui-btn-inherit.ui-radio-off{background:#383E5C; color:white;text-shadow: none;    border: 1px solid #75798e;}
-legend {    color: rgb(244,244,245); text-shadow: none; font-size: 1em;font-weight:bold;margin-top:20px}
+legend {    color: rgb(244,244,245); text-shadow: none; font-size: 1em;font-weight:bold;}
 .ui-header.ui-bar-inherit {    background: #383e5c;    color: white; text-shadow: none;}
 .ui-bar-inherit{background:transparent !important}
 label{color:white;text-shadow:none;font-weight:bold !important}

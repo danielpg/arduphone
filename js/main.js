@@ -11,23 +11,43 @@ if(window.location.href.indexOf("localhost") >= 0 ){
 function onDeviceReady() {
 	refreshlist();
 
+	$(document).on("pagecreate","#pslider", function(){ 
+		$(document).on("change", "#slider-1", function(){
+			var col = $(this).val();
+		    $("#qq").html(col + "ms");
 
-	$( "#slider-1" ).on( "slidestop", function( event, ui ) {
-		console.log(  $(this).val()  );
+			tmp = parseFloat(col) * 10;
+			bluetoothSerial.write([ 200 , tmp ], function(){},  function(){});
+		});
 	});
+
+	/*$( "#slider-1" ).on( "slidestop", function( event, ui ) {
+		tmp = parseInt($(this).val()) * 10;
+		bluetoothSerial.write([ 200 , tmp ], function(){},  function(){});
+	});*/
 
 	$("input[name='sliderstep']").on("change", function() {
-		console.log( $("input[name='sliderstep']:checked").val() );
+		bluetoothSerial.write( $("input[name='sliderstep']:checked").val() , function(){},  function(){});
 	});
+
 	//$("#ok").html("javascript OK");
 }
 /*sss*/
 function refreshlist(){
+	
+	$.mobile.loading( "show" );
+
 	bluetoothSerial.list(function(data){
 		bluelist = data;
 		//say_list(data);
 		drawlist();
-	}, function(){});	
+
+		$.mobile.loading( "hide" );
+
+	}, function(){
+		$.mobile.loading( "hide" );
+		alert("No se pudo conectar Bluetooth");
+	});	
 }
 
 function testint() {
@@ -52,12 +72,17 @@ function drawlist(){
 }
 
 function select_blue(id){
-	bluetoothSerial.isConnected(function(){}, function(){
-		bluetoothSerial.connect(bluelist[id].address, function(){ 
-			 $.mobile.changePage("#pslider");		
-		}, function(){ 
-			 alert("Error: no se pudo conectar.");
-		 });
+	$.mobile.loading( "show" );
+	bluetoothSerial.isConnected(function(){
+		$.mobile.loading( "hide" );
+	}, function(){
+			bluetoothSerial.connect(bluelist[id].address, function(){ 
+				$.mobile.changePage("#pslider");		
+				$.mobile.loading( "hide" );
+			}, function(){ 
+				$.mobile.loading( "hide" );
+				alert("Error: no se pudo conectar.");
+			});
 	});
 }
 
@@ -105,11 +130,6 @@ function say_list(items){
 		}
 	}
 }
-
-function send_speed(){
-
-}
-
 
 function myclose(){
 	if (navigator.app) {
